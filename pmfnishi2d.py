@@ -7,17 +7,14 @@
 #*** Parameters
 
 ## file name of figure
+fn_data1="helix_count_1_10.dat"
+fn_data2="area_1_10.dat"
 fn_fig1="pic_pmfnishi.png"
 
 Graph_title=""
-X_label="The number of helical residues"
+X_label="Nhelix"
 Y_label="SASA (nm)"
 FONTSIZE=30
-
-#Graph_x_low=0
-#Graph_x_high=18
-#Graph_y_low=0.8
-#Graph_y_high=2.2
 
 ## number of bins of each axis
 nbin_x=28
@@ -25,12 +22,12 @@ nbin_y=140
 
 ## bin width of each axis
 bw_x=1
-bw_y=0.01
+bw_y=0.2
 
 ## minimum value of bins
 min_x=0.0
 #max_x=28.0
-min_y=0.7
+min_y=26.0
 #max_y=2.0
 
 Temperature=300.0 #K
@@ -54,8 +51,10 @@ def read_data(filename,data_type):
   f.close()
   return data
 
-x = read_data(sys.argv[1], float)
-y = read_data(sys.argv[2], float)
+#x = read_data(sys.argv[1], float)
+#y = read_data(sys.argv[2], float)
+x = read_data(fn_data1, float)
+y = read_data(fn_data2, float)
 
 #bin_x=(max_x-min_x)/float(nbins)
 #bin_y=(max(y)-min(y))/float(nbins)
