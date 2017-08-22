@@ -2,7 +2,7 @@
 # * pmfnishi2d.py for the number of helical residues
 # *
 # calculate and make 2D PMF figure
-# v7.0
+# v7.1
 
 #*** Parameters
 
@@ -13,7 +13,7 @@ fn_fig1="pic_pmfnishi.png"
 
 Graph_title=""
 X_label="Nhelix"
-Y_label="SASA (nm)"
+Y_label="SASA (nm^2)"
 FONTSIZE=30
 
 ## number of bins of each axis
@@ -126,7 +126,7 @@ for i in range(nbin_x):
 for i in range(nbin_y):
   #xtics_label.append('') 
   #ytics_label.append(min_y+i*bin_y)
-  ytics_label.append("%.2f" % (min_y+i*5.0*bin_y))
+  ytics_label.append("%.0f" % (min_y+i*5.0*bin_y))
 plt.grid(False)
 axis.set_xticklabels(['']+xtics_label,rotation=90)
 axis.set_yticklabels(['']+ytics_label)
